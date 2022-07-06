@@ -2,11 +2,15 @@
 
 **Supported Visual Studio Versions**: 2017, 2019
 
+## Purpose
+
+This extension is designed to capture information about build times and the log them to an external platform. As of this writing, the only external database supported is InfluxDB.
+
 ## Extension Structure
 
-The extension entry point is `BuildMonitorPackage.cs`, which registers the package with Visual Studio using the attribue values declared before the class definition.
+The extension entry point is `BuildMonitorPackage.cs`, which registers the package with Visual Studio using the attribute values declared before the class definition.
 
-As of VS2019, packages are required to be loaded Asynchronously. Extensions by default are set to load when their corresponding UI element is made visible, but as this extension needs to primarily run as a background service to detect build events, it has also been configured to auto-load on start-up in the background (this does mean that devs will need to wait until VS notifies that all background extensions have been loaded before building).
+As of VS2019, packages are required to be loaded asynchronously. Extensions by default are set to load when their corresponding UI element is made visible, but as this extension needs to primarily run as a background service to detect build events, it has also been configured to auto-load on start-up in the background (this does mean that it won't  will need to wait until VS notifies that all background extensions have been loaded before build times are captured).
 
 Instructions on how to asynchronously load an extension in the background can be found [here](https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-use-asyncpackage-to-load-vspackages-in-the-background?view=vs-2019).
 
@@ -24,7 +28,7 @@ The extension consists of the following:
 
 ## Tests
 
-Some simple unit tests have been setup in the `BuildTimerLoggerTests` project in the `BuildTimeLoggerTests.cs` file.
+Some simple unit tests have been setup in the `BuildTimeLoggerTests` project in the `BuildTimeLoggerTests.cs` file.
 
 The focus of the tests are in ensuring the data extracted from the build events and the general machine environment are formatted correctly to the expected InfluxDB Line Protocol format.
 
@@ -60,7 +64,7 @@ This should then build the extension to `BuildTimeLogger/bin/Release/BuildTimeLo
 
 Once finished you can exit the container by typing in `exit`.
 
-# Deploy VS Build Timer Plugin With PowerShell Script
+# Deploy VS Build Time Plugin With PowerShell Script
 
 This repo contains the deployment files needed to automate the installation of the Visual Studio Build Time Plugin.
 
