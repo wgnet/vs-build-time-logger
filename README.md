@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This extension is designed to capture information about build times and the log them to an external platform. As of this writing, the only external database supported is InfluxDB.
+This extension is designed to capture information about build times and the log them to an external platform. As of this writing, the only external database supported is InfluxDB, however other logging targets could quite easily be added by creating additional implementations of the `IBuildLogger` interface and modifying the settings to allow selection of the new logging service and any configuration required for accessing the logging database.
 
 ## Extension Structure
 
