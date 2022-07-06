@@ -35,7 +35,7 @@ RUN Set-ExecutionPolicy Bypass -Scope Process -Force; `
 RUN choco install git.install -y
 
 # Add the microsoft nuget repository so we can install dependencies for Visual Studio projects
-RUN dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+RUN Install-PackageProvider -Name Nuget -Confirm:$false -Force -ErrorAction SilentlyContinue
 
 # Define the entry point for the docker container.
 # This entry point starts the developer command prompt and launches the PowerShell shell.
