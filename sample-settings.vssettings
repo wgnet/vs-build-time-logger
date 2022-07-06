@@ -1,0 +1,29 @@
+<UserSettings>
+    <ApplicationIdentity version="16.0"/>
+    <ToolsOptions/>
+    <Category name="Build Time Logger_General" Category="{526b7744-84d1-429c-ab85-a5ee2dce448f}" Package="{9a35dbc8-ada9-46fb-b3fd-c224bd07427b}" RegisteredName="Build Time Logger_General" PackageName="BuildTimeLoggerPackage">
+        <!-- Version of InfluxDB to Configure. Valid values are 'InfluxDBv1' and 'InfluxDBv2'-->
+        <PropertyValue name="InfluxDBVersion">InfluxDBv1</PropertyValue>
+
+        <!-- Whether to log the user with build information. Valid values are 'True' and 'False'-->
+        <PropertyValue name="LogUser">True</PropertyValue>
+
+        <!-- Whether to attempt to log to the external server at all. Valid values are 'True' and 'False'-->
+        <PropertyValue name="LoggingEnabled">True</PropertyValue>
+
+        <!-- ************************* InfluxDB1 Settings ********************** -->
+        <!-- These only need to be populated if InfluxDBVersion is set to InfluxDBv1 -->
+        <PropertyValue name="InfluxDB1URL"></PropertyValue>
+        <PropertyValue name="InfluxDB1Database"></PropertyValue>
+        <PropertyValue name="InfluxDB1Username"></PropertyValue>
+        <PropertyValue name="InfluxDB1Password"></PropertyValue>
+
+
+        <!-- ************************* InfluxDB2 Settings ********************** -->
+        <!-- These only need to be populated if InfluxDBVersion is set to InfluxDBv2 -->
+        <PropertyValue name="InfluxDB2URL"></PropertyValue>
+        <PropertyValue name="InfluxDB2Org"></PropertyValue>
+        <PropertyValue name="InfluxDB2Bucket"></PropertyValue>
+        <PropertyValue name="InfluxDB2Token"></PropertyValue>
+    </Category>
+</UserSettings>
