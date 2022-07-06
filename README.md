@@ -91,9 +91,6 @@ Some example usages of the script:
 .\deploy-extension.ps1 -Target latest -ExtensionPath <extension-path>
 ```
 
-A premade invokation of this script can be found in `install-extension.ps1` which attempts to install the plugin for all Visual Studio installations using the provided `.vssettings` file.
-
-
 ## Manually Installing the Extension
 
 Double click on the provided `BuildTimeLogger.vsix` file. This should launch an installer which will allow you to select which version of Visual Studio to install the extension for.

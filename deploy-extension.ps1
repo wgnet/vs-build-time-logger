@@ -19,7 +19,7 @@ $ScriptName = $MyInvocation.MyCommand.Name
 $SecondsToSleep = 20
 
 # If downloading an extension - what name to save it as
-$DownloadedExtensionName = "extension.vsix"
+$DownloadedExtensionName = "vs-build-time-logger.vsix"
 
 ##################################################
 # Helper Functions
