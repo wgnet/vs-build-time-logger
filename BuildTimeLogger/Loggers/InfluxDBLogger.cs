@@ -262,7 +262,7 @@ namespace BuildTimeLogger.Logger
 
 
         /// <summary>
-        /// Private construuctor to confrom to singleton pattern imposed by base class
+        /// Class constructor
         /// </summary>
         public InfluxDBLogger()
         {
